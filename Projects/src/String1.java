@@ -72,6 +72,68 @@ public class String1 {
 		}
 		return "";
 	}
+	
+	public static String middleTwo(String str) {
+		return str.substring(str.length()/2-1,str.length()/2) + str.substring(str.length()/2,str.length()/2+1);
+	}
+	
+	public static boolean endsLy(String str) {
+		if(str.length()<2) {
+			return false;
+		}
+		if(str.substring(str.length()-2,str.length()).equals("ly")){
+			return true;
+		}
+		return false;
+	}
+	
+	public static String nTwice(String str, int n) {
+		return str.substring(0,n) + str.substring(str.length()-n, str.length());
+	}
+	
+	public static String twoChar(String str, int index) {
+		if(str.length()<2){
+			return str;
+		}
+		if(index>str.length()-2 || index<0){
+			return str.substring(0,2);
+		}
+		return str.substring(index, index+2);
+	}
+
+	public String middleThree(String str) {
+		return str.substring(str.length()/2-1,str.length()/2+2);
+	}
+	
+	public boolean hasBad(String str) {
+		if(str.length()<3 || str.length()<4 && str.charAt(0)!='b'){
+			return false;
+		}
+		if(str.substring(0,3).equals("bad") || str.substring(1,4).equals("bad")){
+			return true;
+		}
+		return false;
+	}
+	
+	public String atFirst(String str) {
+		if(str.length()<2){
+			for(int i=0; i<3-str.length(); i++){
+				str = str + "@";
+			}
+		    return str;
+		}
+		return str.substring(0,2);
+	}
+
+	public String lastChars(String a, String b) {
+		a = a +"@@@@";
+		b = "@@@@" + b;
+		return a.charAt(0) + b.substring(b.length()-1,b.length());
+	}
+
+
+
+
 
 	public static void main(String[] args) {
 		System.out.println(helloName("Nick"));
