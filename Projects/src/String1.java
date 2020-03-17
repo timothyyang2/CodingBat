@@ -131,8 +131,45 @@ public class String1 {
 		return a.charAt(0) + b.substring(b.length()-1,b.length());
 	}
 
+	public String conCat(String a, String b) {
+		if(a.length()==0){
+			return b;
+		}
+		if(b.length()==0){
+		    return a;
+		}
+		if(a.substring(a.length()-1,a.length()).equals(b.substring(0,1))){
+		    return a.substring(0,a.length()-1)+b;
+		}
+		return a+b;
+	}
+	
+	public String lastTwo(String str) {
+		if(str.length()<2){
+			return str;
+		}
+		return str.substring(0,str.length()-2) + str.substring(str.length()-1,str.length()) + str.substring(str.length()-2,str.length()-1);
+	}
+	
+	public String seeColor(String str) {
+		if(str.startsWith("red")){
+			return "red";
+		}
+		if(str.startsWith("blue")){
+		    return "blue";
+		}
+		return "";
+	}
 
-
+	public boolean frontAgain(String str) {
+		if(str.length()<2){
+			return false;
+		}
+		if(str.substring(0,2).equals(str.substring(str.length()-2,str.length()))){
+			return true;
+		}
+		return false;
+	}
 
 
 	public static void main(String[] args) {
