@@ -101,11 +101,11 @@ public class String1 {
 		return str.substring(index, index+2);
 	}
 
-	public String middleThree(String str) {
+	public static String middleThree(String str) {
 		return str.substring(str.length()/2-1,str.length()/2+2);
 	}
 	
-	public boolean hasBad(String str) {
+	public static boolean hasBad(String str) {
 		if(str.length()<3 || str.length()<4 && str.charAt(0)!='b'){
 			return false;
 		}
@@ -115,7 +115,7 @@ public class String1 {
 		return false;
 	}
 	
-	public String atFirst(String str) {
+	public static String atFirst(String str) {
 		if(str.length()<2){
 			for(int i=0; i<3-str.length(); i++){
 				str = str + "@";
@@ -125,13 +125,13 @@ public class String1 {
 		return str.substring(0,2);
 	}
 
-	public String lastChars(String a, String b) {
+	public static String lastChars(String a, String b) {
 		a = a +"@@@@";
 		b = "@@@@" + b;
 		return a.charAt(0) + b.substring(b.length()-1,b.length());
 	}
 
-	public String conCat(String a, String b) {
+	public static String conCat(String a, String b) {
 		if(a.length()==0){
 			return b;
 		}
@@ -144,14 +144,14 @@ public class String1 {
 		return a+b;
 	}
 	
-	public String lastTwo(String str) {
+	public static String lastTwo(String str) {
 		if(str.length()<2){
 			return str;
 		}
 		return str.substring(0,str.length()-2) + str.substring(str.length()-1,str.length()) + str.substring(str.length()-2,str.length()-1);
 	}
 	
-	public String seeColor(String str) {
+	public static String seeColor(String str) {
 		if(str.startsWith("red")){
 			return "red";
 		}
@@ -161,7 +161,7 @@ public class String1 {
 		return "";
 	}
 
-	public boolean frontAgain(String str) {
+	public static boolean frontAgain(String str) {
 		if(str.length()<2){
 			return false;
 		}
@@ -170,6 +170,92 @@ public class String1 {
 		}
 		return false;
 	}
+
+	public static String minCat(String a, String b) {
+		int omit = 0;
+		if(a.length()>b.length()){
+			omit = a.length()-b.length();
+			a = a.substring(omit,a.length());
+		}else if(a.length()<b.length()){
+		    omit = b.length()-a.length();
+		    b = b.substring(omit,b.length());
+		}else if(a.length()==b.length()){
+		    return a+b;
+		}
+		return a+b;
+	}
+
+	public static String extraFront(String str) {
+		if(str.length()<2){
+			return str+str+str;
+		}
+		return str.substring(0,2)+str.substring(0,2)+str.substring(0,2);
+	}
+	
+	public static String without2(String str) {
+		if(str.length()<2){
+			return str;
+		}
+		String result = str.substring(0,2);
+		String result1 = str.substring(str.length()-2,str.length());
+		if(result.equals(result1)){
+			str = str.substring(2);
+		}
+		return str;
+	}
+	
+	public static String deFront(String str) { 
+		if(str.charAt(0)=='a' && str.charAt(1)=='b'){
+			str = str;
+		}else if(str.charAt(0)=='a'){
+		    str = str.substring(0,1)+str.substring(2);
+		}else if(str.charAt(1)=='b'){
+		    str = str.substring(1);
+		}else{
+		    return str.substring(2);
+		}
+		return str;
+	}
+	
+	public static String startWord(String str, String word) {
+		if(word.length()>str.length()){
+			return "";
+		}
+		if(str.substring(1,word.length()).equals(word.substring(1))){
+		    return str.substring(0,word.length());
+		}
+		return "";
+	}
+	
+	public static String withoutX(String str) {
+		if(str.length()<2){
+		    return "";
+		}
+		if(str.charAt(0)=='x' && str.charAt(str.length()-1)=='x'){
+		    str = str.substring(1,str.length()-1);
+		}else if(str.charAt(0)=='x'){
+		    str = str.substring(1);
+		}else if(str.charAt(str.length()-1)=='x'){
+		    str = str.substring(0,str.length()-1);
+		}
+		return str;
+	}
+
+	public static String withoutX2(String str) {
+		if(str.length()<2){
+			return "";
+		}
+		if(str.charAt(0)=='x' && str.charAt(1)=='x'){
+		    str = str.substring(2);
+		}else if(str.charAt(0)=='x'){
+			str = str.substring(1);
+		}else if(str.charAt(1)=='x'){
+			str = str.substring(0,1) + str.substring(2);
+		}
+		return str;
+	}
+
+
 
 
 	public static void main(String[] args) {
