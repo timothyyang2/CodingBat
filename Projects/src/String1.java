@@ -81,7 +81,7 @@ public class String1 {
 		if(str.length()<2) {
 			return false;
 		}
-		if(str.substring(str.length()-2,str.length()).equals("ly")){
+		if(str.substring(str.length()-2,str.length()).equals("ly")) {
 			return true;
 		}
 		return false;
@@ -92,10 +92,10 @@ public class String1 {
 	}
 	
 	public static String twoChar(String str, int index) {
-		if(str.length()<2){
+		if(str.length()<2) {
 			return str;
 		}
-		if(index>str.length()-2 || index<0){
+		if(index>str.length()-2 || index<0) {
 			return str.substring(0,2);
 		}
 		return str.substring(index, index+2);
@@ -106,18 +106,18 @@ public class String1 {
 	}
 	
 	public static boolean hasBad(String str) {
-		if(str.length()<3 || str.length()<4 && str.charAt(0)!='b'){
+		if(str.length()<3 || str.length()<4 && str.charAt(0)!='b') {
 			return false;
 		}
-		if(str.substring(0,3).equals("bad") || str.substring(1,4).equals("bad")){
+		if(str.substring(0,3).equals("bad") || str.substring(1,4).equals("bad")) {
 			return true;
 		}
 		return false;
 	}
 	
 	public static String atFirst(String str) {
-		if(str.length()<2){
-			for(int i=0; i<3-str.length(); i++){
+		if(str.length()<2) {
+			for(int i=0; i<3-str.length(); i++) {
 				str = str + "@";
 			}
 		    return str;
@@ -132,40 +132,40 @@ public class String1 {
 	}
 
 	public static String conCat(String a, String b) {
-		if(a.length()==0){
+		if(a.length()==0) {
 			return b;
 		}
-		if(b.length()==0){
+		if(b.length()==0) {
 		    return a;
 		}
-		if(a.substring(a.length()-1,a.length()).equals(b.substring(0,1))){
+		if(a.substring(a.length()-1,a.length()).equals(b.substring(0,1))) {
 		    return a.substring(0,a.length()-1)+b;
 		}
 		return a+b;
 	}
 	
 	public static String lastTwo(String str) {
-		if(str.length()<2){
+		if(str.length()<2) {
 			return str;
 		}
 		return str.substring(0,str.length()-2) + str.substring(str.length()-1,str.length()) + str.substring(str.length()-2,str.length()-1);
 	}
 	
 	public static String seeColor(String str) {
-		if(str.startsWith("red")){
+		if(str.startsWith("red")) {
 			return "red";
 		}
-		if(str.startsWith("blue")){
+		if(str.startsWith("blue")) {
 		    return "blue";
 		}
 		return "";
 	}
 
 	public static boolean frontAgain(String str) {
-		if(str.length()<2){
+		if(str.length()<2) {
 			return false;
 		}
-		if(str.substring(0,2).equals(str.substring(str.length()-2,str.length()))){
+		if(str.substring(0,2).equals(str.substring(str.length()-2,str.length()))) {
 			return true;
 		}
 		return false;
@@ -173,43 +173,43 @@ public class String1 {
 
 	public static String minCat(String a, String b) {
 		int omit = 0;
-		if(a.length()>b.length()){
+		if(a.length()>b.length()) {
 			omit = a.length()-b.length();
 			a = a.substring(omit,a.length());
-		}else if(a.length()<b.length()){
+		}else if(a.length()<b.length()) {
 		    omit = b.length()-a.length();
 		    b = b.substring(omit,b.length());
-		}else if(a.length()==b.length()){
+		}else if(a.length()==b.length()) {
 		    return a+b;
 		}
 		return a+b;
 	}
 
 	public static String extraFront(String str) {
-		if(str.length()<2){
+		if(str.length()<2) {
 			return str+str+str;
 		}
 		return str.substring(0,2)+str.substring(0,2)+str.substring(0,2);
 	}
 	
 	public static String without2(String str) {
-		if(str.length()<2){
+		if(str.length()<2) {
 			return str;
 		}
 		String result = str.substring(0,2);
 		String result1 = str.substring(str.length()-2,str.length());
-		if(result.equals(result1)){
+		if(result.equals(result1)) {
 			str = str.substring(2);
 		}
 		return str;
 	}
 	
 	public static String deFront(String str) { 
-		if(str.charAt(0)=='a' && str.charAt(1)=='b'){
+		if(str.charAt(0)=='a' && str.charAt(1)=='b') {
 			str = str;
-		}else if(str.charAt(0)=='a'){
+		}else if(str.charAt(0)=='a') {
 		    str = str.substring(0,1)+str.substring(2);
-		}else if(str.charAt(1)=='b'){
+		}else if(str.charAt(1)=='b') {
 		    str = str.substring(1);
 		}else{
 		    return str.substring(2);
@@ -218,38 +218,38 @@ public class String1 {
 	}
 	
 	public static String startWord(String str, String word) {
-		if(word.length()>str.length()){
+		if(word.length()>str.length()) {
 			return "";
 		}
-		if(str.substring(1,word.length()).equals(word.substring(1))){
+		if(str.substring(1,word.length()).equals(word.substring(1))) {
 		    return str.substring(0,word.length());
 		}
 		return "";
 	}
 	
 	public static String withoutX(String str) {
-		if(str.length()<2){
+		if(str.length()<2) {
 		    return "";
 		}
-		if(str.charAt(0)=='x' && str.charAt(str.length()-1)=='x'){
+		if(str.charAt(0)=='x' && str.charAt(str.length()-1)=='x') {
 		    str = str.substring(1,str.length()-1);
-		}else if(str.charAt(0)=='x'){
+		}else if(str.charAt(0)=='x') {
 		    str = str.substring(1);
-		}else if(str.charAt(str.length()-1)=='x'){
+		}else if(str.charAt(str.length()-1)=='x') {
 		    str = str.substring(0,str.length()-1);
 		}
 		return str;
 	}
 
 	public static String withoutX2(String str) {
-		if(str.length()<2){
+		if(str.length()<2) {
 			return "";
 		}
-		if(str.charAt(0)=='x' && str.charAt(1)=='x'){
+		if(str.charAt(0)=='x' && str.charAt(1)=='x') {
 		    str = str.substring(2);
-		}else if(str.charAt(0)=='x'){
+		}else if(str.charAt(0)=='x') {
 			str = str.substring(1);
-		}else if(str.charAt(1)=='x'){
+		}else if(str.charAt(1)=='x') {
 			str = str.substring(0,1) + str.substring(2);
 		}
 		return str;
