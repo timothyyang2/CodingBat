@@ -97,7 +97,6 @@ public class String2 {
 		return true;  
 	}
 
-
 	public static void main(String[] args) {
 		
 	}
