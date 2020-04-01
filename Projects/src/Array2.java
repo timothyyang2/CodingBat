@@ -83,6 +83,48 @@ public class Array2 {
 		  }
 		  return false;
 		}
+	
+	public boolean more14(int[] nums) {
+		  int count = 0;
+		  int count1 = 0;
+		  for(int i=0; i<nums.length; i++){
+		    if(nums[i]==1){
+		      count++;
+		    }else if(nums[i]==4){
+		      count1++;
+		    }
+		  }
+		  if(count>count1){
+		    return true;
+		  }
+		  return false;
+		}
+
+	public int[] fizzArray(int n) {
+		  int[] result = new int[n];
+		  for(int i=0; i<result.length; i++){
+		    result[i]=i;
+		  }
+		  return result;
+		}
+
+	public boolean only14(int[] nums) {
+		  for(int i=0; i<nums.length; i++){
+		    if(nums[i]!=1 && nums[i]!=4){
+		      return false;
+		    }
+		  }
+		  return true;
+		}
+
+	public String[] fizzArray2(int n) {
+		  String[] result = new String[n];
+		  for(int i=0; i<result.length; i++){
+		    result[i] = String.valueOf(i);
+		  }
+		  return result;
+		}
+
 
 	public static void main(String[] args) {
 		
