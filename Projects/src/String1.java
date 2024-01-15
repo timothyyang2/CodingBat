@@ -250,7 +250,6 @@ public class String1 {
         return result;
     }
       
-      
     public static void main(String[] args) {
 
     }
