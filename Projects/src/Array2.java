@@ -215,6 +215,47 @@ public class Array2 {
         return count != 0 && indexTwo > indexOne;
     }
 
+    public boolean modThree(int[] nums) {
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (nums[i] % 2 == 0 && nums[i + 1] % 2 == 0 && nums[i + 2] % 2 == 0
+                    || nums[i] % 2 != 0 && nums[i + 1] % 2 != 0 && nums[i + 2] % 2 != 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean haveThree(int[] nums) {
+        int count = 0;
+        if (nums.length == 1 && nums[0] == 3) {
+            count++;
+        }
+        if (nums.length > 1 && nums[nums.length - 1] == 3 && nums[nums.length - 2] != 3) {
+            count++;
+        }
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == 3 && nums[i + 1] != 3) {
+                count++;
+            }
+        }
+        return count == 3;
+    }
+
+    public boolean twoTwo(int[] nums) {
+        if (nums.length == 1 && nums[0] == 2) {
+            return false;
+        }
+        if (nums.length > 1 && nums[nums.length - 1] == 2 && nums[nums.length - 2] != 2) {
+            return false;
+        }
+        for (int i = 1; i < nums.length - 1; i++) {
+            if (nums[i] == 2 && (nums[i - 1] != 2 && nums[i + 1] != 2)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
     public static void main(String[] args) {
 
     }
