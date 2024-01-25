@@ -255,6 +255,44 @@ public class Array2 {
         }
         return true;
     }
+
+    public boolean sameEnds(int[] nums, int len) {
+        for (int i = 0; i < len; i++) {
+            if (nums[i] != nums[nums.length - len + i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean tripleUp(int[] nums) {
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (nums[i] + 1 == nums[i + 1] && nums[i + 1] + 1 == nums[i + 2]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int[] fizzArray3(int start, int end) {
+        int[] result = new int[end - start];
+        for (int i = 0; i < end - start; i++) {
+            result[i] = i + start;
+        }
+        return result;
+    }
+
+    public int[] shiftLeft(int[] nums) {
+        int[] result = new int[nums.length];
+        if (nums.length == 0) {
+            return result;
+        }
+        for (int i = 0; i < nums.length - 1; i++) {
+            result[i] = nums[i + 1];
+        }
+        result[result.length - 1] = nums[0];
+        return result;
+    }
     
     public static void main(String[] args) {
 
