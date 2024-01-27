@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Array2 {
 
     public int countEvens(int[] nums) {
@@ -293,7 +295,58 @@ public class Array2 {
         result[result.length - 1] = nums[0];
         return result;
     }
-    
+
+    public int[] tenRun(int[] nums) {
+        int[] result = new int[nums.length];
+        int temp = -1;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 10 == 0) {
+                temp = nums[i];
+            }
+            if (nums[i] % 10 != 0 && temp != -1) {
+                result[i] = temp;
+            } else {
+                result[i] = nums[i];
+            }
+        }
+        return result;
+    }
+
+    public int[] pre4(int[] nums) {
+        int index = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 4) {
+                index = i;
+                break;
+            }
+        }
+        return Arrays.copyOfRange(nums, 0, index);
+    }
+
+    public int[] post4(int[] nums) {
+        int index = 0;
+        for (int i = nums.length - 1; i > 0; i--) {
+            if (nums[i] == 4) {
+                index = i;
+                break;
+            }
+        }
+        return Arrays.copyOfRange(nums, index + 1, nums.length);
+    }
+
+    public int[] notAlone(int[] nums, int val) {
+        for (int i = 1; i < nums.length - 1; i++) {
+            if (nums[i] == val && nums[i] != nums[i - 1] && nums[i - 1] != nums[i + 1]) {
+                if (nums[i - 1] > nums[i + 1]) {
+                    nums[i] = nums[i - 1];
+                } else {
+                    nums[i] = nums[i + 1];
+                }
+            }
+        }
+        return nums;
+    }
+
     public static void main(String[] args) {
 
     }
