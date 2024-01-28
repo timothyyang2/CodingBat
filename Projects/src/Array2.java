@@ -347,6 +347,75 @@ public class Array2 {
         return nums;
     }
 
+    public int[] zeroFront(int[] nums) {
+        int[] result = new int[nums.length];
+        int index = nums.length - 1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (nums[i] != 0) {
+                result[index] = nums[i];
+                index--;
+            }
+        }
+        return result;
+    }
+
+    public int[] withoutTen(int[] nums) {
+        int[] result = new int[nums.length];
+        int index = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 10) {
+                result[index] = nums[i];
+                index++;
+            }
+        }
+        return result;
+    }
+
+    public int[] zeroMax(int[] nums) {
+        int odd = -1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (nums[i] % 2 != 0 && nums[i] > odd) {
+                odd = nums[i];
+            }
+            if (nums[i] == 0 && odd >= 0) {
+                nums[i] = odd;
+            }
+        }
+        return nums;
+    }
+
+    public int[] evenOdd(int[] nums) {
+        int indexFront = 0;
+        int indexBack = nums.length - 1;
+        int[] result = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 2 == 0) {
+                result[indexFront] = nums[i];
+                indexFront++;
+            } else {
+                result[indexBack] = nums[i];
+                indexBack--;
+            }
+        }
+        return result;
+    }
+
+    public String[] fizzBuzz(int start, int end) {
+        String[] result = new String[end - start];
+        for (int i = 0; i < end - start; i++) {
+            if ((i + start) % 3 == 0 && (i + start) % 5 != 0) {
+                result[i] = "Fizz";
+            } else if ((i + start) % 5 == 0 && (i + start) % 3 != 0) {
+                result[i] = "Buzz";
+            } else if ((i + start) % 3 == 0 && (i + start) % 5 == 0) {
+                result[i] = "FizzBuzz";
+            } else {
+                result[i] = String.valueOf(i + start);
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
 
     }
