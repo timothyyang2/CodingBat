@@ -45,6 +45,40 @@ public class Logic2 {
                 && ((Math.abs(a - c) >= 2 || Math.abs(a - b) >= 2) && Math.abs(b - c) >= 2);
     }
 
+    public int blackjack(int a, int b) {
+        if (b <= 21 && (a > 21 || Math.abs(21 - a) > Math.abs(21 - b))) {
+            return b;
+        } else if (a <= 21 && (b > 21 || Math.abs(21 - a) < Math.abs(21 - b))) {
+            return a;
+        }
+        return 0;
+    }
+
+    public boolean evenlySpaced(int a, int b, int c) {
+        int small = a;
+        int medium = b;
+        int large = c;
+        int temp = 0;
+        if (small > medium) {
+            small = b;
+            medium = a;
+        }
+        if (medium > large) {
+            temp = large;
+            large = medium;
+            medium = temp;
+        }
+        if (small > medium) {
+            temp = medium;
+            medium = small;
+            small = temp;
+        }
+        if (Math.abs(small - medium) == Math.abs(large - medium)) {
+            return true;
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
 
     }
