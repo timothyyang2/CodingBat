@@ -1,5 +1,17 @@
 public class Logic2 {
 
+    public boolean makeBricks(int small, int big, int goal) {
+        if (goal / 5 <= big) {
+            goal = goal - (goal / 5) * 5;
+        } else {
+            goal = goal - (big * 5);
+        }
+        if (goal - small <= 0) {
+            return true;
+        }
+        return false;
+    }
+
     public int loneSum(int a, int b, int c) {
         if (a == b && b == c) {
             return 0;
@@ -40,6 +52,19 @@ public class Logic2 {
         return n;
     }
 
+    public int roundSum(int a, int b, int c) {
+        return round10(a) + round10(b) + round10(c);
+    }
+
+    public int round10(int num) {
+        if (num % 10 >= 5) {
+            num = num + (10 - (num % 10));
+        } else {
+            num = num - (num % 10);
+        }
+        return num;
+    }
+
     public boolean closeFar(int a, int b, int c) {
         return (Math.abs(b - a) < 2 || Math.abs(b - c) < 2 || Math.abs(a - c) < 2)
                 && ((Math.abs(a - c) >= 2 || Math.abs(a - b) >= 2) && Math.abs(b - c) >= 2);
@@ -77,6 +102,18 @@ public class Logic2 {
             return true;
         }
         return false;
+    }
+
+    public int makeChocolate(int small, int big, int goal) {
+        if (goal / 5 <= big) {
+            goal = goal - (goal / 5) * 5;
+        } else {
+            goal = goal - (big * 5);
+        }
+        if (goal - small <= 0) {
+            return goal;
+        }
+        return -1;
     }
 
     public static void main(String[] args) {
