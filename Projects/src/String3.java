@@ -15,6 +15,35 @@ public class String3 {
         return count;
     }
 
+    public String withoutString(String base, String remove) {
+        String result = "";
+        for (int i = 0; i < base.length();) {
+            if (!(i + remove.length() > base.length())
+                    && base.substring(i, i + remove.length()).equalsIgnoreCase(remove)) {
+                i += remove.length();
+                continue;
+            } else {
+                result += base.substring(i, i + 1);
+                i++;
+            }
+        }
+        return result;
+    }
+
+    public boolean equalIsNot(String str) {
+        int is = 0;
+        int not = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (!(i + 2 > str.length()) && str.substring(i, i + 2).equals("is")) {
+                is++;
+            }
+            if (!(i + 3 > str.length()) && str.substring(i, i + 3).equals("not")) {
+                not++;
+            }
+        }
+        return is == not;
+    }
+
     public int sumDigits(String str) {
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
