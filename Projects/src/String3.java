@@ -44,6 +44,33 @@ public class String3 {
         return is == not;
     }
 
+    public boolean gHappy(String str) {
+        boolean happy = true;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'g') {
+                if (i > 0 && str.charAt(i - 1) == 'g') {
+                    happy = true;
+                } else if (i < str.length() - 1 && str.charAt(i + 1) == 'g') {
+                    happy = true;
+                } else {
+                    happy = false;
+                }
+            }
+        }
+        return happy;
+    }
+
+    public int countTriple(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (i > 0 && str.charAt(i - 1) == str.charAt(i) && i < str.length() - 1
+                    && str.charAt(i + 1) == str.charAt(i)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public int sumDigits(String str) {
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
@@ -52,6 +79,18 @@ public class String3 {
             }
         }
         return count;
+    }
+
+    public String sameEnds(String string) {
+        String current = "";
+        String result = "";
+        for (int i = 0; i < string.length(); i++) {
+            current += string.charAt(i);
+            if (i < string.length() / 2 && current.equals(string.substring(string.length() - current.length()))) {
+                result = current;
+            }
+        }
+        return result;
     }
 
     public int maxBlock(String str) {
