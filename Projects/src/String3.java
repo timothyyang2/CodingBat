@@ -93,6 +93,18 @@ public class String3 {
         return result;
     }
 
+    public String mirrorEnds(String string) {
+        String current = "";
+        String result = "";
+        for (int i = string.length() - 1; i >= 0; i--) {
+            current += string.charAt(i);
+            if (current.equals(string.substring(0, current.length()))) {
+                result = current;
+            }
+        }
+        return result;
+    }
+
     public int maxBlock(String str) {
         int count = 0;
         int maxBlock = 0;
@@ -110,6 +122,37 @@ public class String3 {
             count = 0;
         }
         return maxBlock;
+    }
+
+    public int sumNumbers(String str) {
+        String current = "";
+        int sum = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.isDigit(str.charAt(i))) {
+                if (i < str.length() - 1 && Character.isDigit(str.charAt(i + 1))) {
+                    current += str.charAt(i);
+                } else {
+                    current += str.charAt(i);
+                    sum += Integer.parseInt(current);
+                    current = "";
+                }
+            }
+        }
+        return sum;
+    }
+
+    public String notReplace(String str) {
+        String result = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (i - 1 >= 0 && Character.isLetter(str.charAt(i - 1))
+                    || i + 2 < str.length() && Character.isLetter(str.charAt(i + 2))) {
+                result += str.charAt(i);
+            } else if (i + 1 < str.length() && str.substring(i, i + 2).equals("is")) {
+                result += "is not";
+                i++;
+            }
+        }
+        return result;
     }
 
     public static void main(String[] args) {
