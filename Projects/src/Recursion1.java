@@ -24,6 +24,94 @@ public class Recursion1 {
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
+    public int bunnyEars2(int bunnies) {
+        if (bunnies == 0) {
+            return 0;
+        }
+        if (bunnies % 2 == 0) {
+            return bunnyEars2(bunnies - 1) + 3;
+        } else {
+            return bunnyEars2(bunnies - 1) + 2;
+        }
+    }
+
+    public int triangle(int rows) {
+        if (rows == 0) {
+            return 0;
+        }
+        return triangle(rows - 1) + rows;
+    }
+
+    public int sumDigits(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        return sumDigits(n / 10) + n % 10;
+    }
+
+    public int count7(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        if (n % 10 == 7) {
+            return count7(n / 10) + 1;
+        }
+        return count7(n / 10);
+    }
+
+    public int count8(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        if (n % 10 == 8 && n % 100 == 88) {
+            return count8(n / 10) + 2;
+        }
+        if (n % 10 == 8) {
+            return count8(n / 10) + 1;
+        }
+        return count8(n / 10);
+    }
+
+    public int powerN(int base, int n) {
+        if (base < 1 && n < 1) {
+            return 0;
+        }
+        if (n == 1) {
+            return base;
+        }
+        return powerN(base, n - 1) * base;
+    }
+
+    public int countX(String str) {
+        if (str.length() == 0) {
+            return 0;
+        }
+        if (str.charAt(str.length() - 1) == 'x') {
+            return countX(str.substring(0, str.length() - 1)) + 1;
+        }
+        return countX(str.substring(0, str.length() - 1));
+    }
+
+    public int countHi(String str) {
+        if (str.length() < 2) {
+            return 0;
+        }
+        if (str.substring(str.length() - 2, str.length()).equals("hi")) {
+            return countHi(str.substring(0, str.length() - 1)) + 1;
+        }
+        return countHi(str.substring(0, str.length() - 1));
+    }
+
+    public String changeXY(String str) {
+        if (str.length() == 0) {
+            return "";
+        }
+        if (str.charAt(str.length() - 1) == 'x') {
+            return changeXY(str.substring(0, str.length() - 1)) + "y";
+        }
+        return changeXY(str.substring(0, str.length() - 1)) + str.charAt(str.length() - 1);
+    }
+
     public static void main(String[] args) {
 
     }
