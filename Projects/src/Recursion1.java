@@ -112,6 +112,27 @@ public class Recursion1 {
         return changeXY(str.substring(0, str.length() - 1)) + str.charAt(str.length() - 1);
     }
 
+    public String changePi(String str) {
+        if (str.length() < 2) {
+            return str;
+        }
+        if (str.substring(0, 2).equals("pi")) {
+            return "3.14" + changePi(str.substring(2));
+        } else {
+            return str.substring(0, 1) + changePi(str.substring(1));
+        }
+    }
+
+    public String noX(String str) {
+        if (str.length() == 0) {
+            return "";
+        }
+        if (str.charAt(0) == 'x') {
+            return noX(str.substring(1));
+        }
+        return str.substring(0, 1) + noX(str.substring(1));
+    }
+
     public static void main(String[] args) {
 
     }
