@@ -133,6 +133,46 @@ public class Recursion1 {
         return str.substring(0, 1) + noX(str.substring(1));
     }
 
+    public boolean array6(int[] nums, int index) {
+        if (nums.length == index) {
+            return false;
+        }
+        if (nums[index] == 6) {
+            return true;
+        }
+        return array6(nums, index + 1);
+    }
+
+    public int array11(int[] nums, int index) {
+        if (nums.length == index) {
+            return 0;
+        }
+        if (nums[index] == 11) {
+            return array11(nums, index + 1) + 1;
+        }
+        return array11(nums, index + 1);
+    }
+
+    public boolean array220(int[] nums, int index) {
+        if (nums.length == 0 || nums.length == index + 1) {
+            return false;
+        }
+        if (nums[index + 1] == nums[index] * 10) {
+            return true;
+        }
+        return array220(nums, index + 1);
+    }
+
+    public String allStar(String str) {
+        if (str.length() == 0) {
+            return "";
+        }
+        if (str.length() == 1) {
+            return str.substring(0, 1);
+        }
+        return str.substring(0, 1) + "*" + allStar(str.substring(1));
+    }
+
     public static void main(String[] args) {
 
     }
