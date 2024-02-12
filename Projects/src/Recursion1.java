@@ -173,6 +173,39 @@ public class Recursion1 {
         return str.substring(0, 1) + "*" + allStar(str.substring(1));
     }
 
+    public String pairStar(String str) {
+        if (str.length() == 0) {
+            return "";
+        }
+        if (str.length() == 1) {
+            return str.substring(0, 1);
+        }
+        if (str.charAt(0) == str.charAt(1)) {
+            return str.charAt(0) + "*" + pairStar(str.substring(1));
+        }
+        return str.charAt(0) + pairStar(str.substring(1));
+    }
+
+    public String endX(String str) {
+        if (str.length() == 0) {
+            return "";
+        }
+        if (str.charAt(0) == 'x') {
+            return endX(str.substring(1)) + "x";
+        }
+        return str.charAt(0) + endX(str.substring(1));
+    }
+
+    public int countPairs(String str) {
+        if (str.length() < 3) {
+            return 0;
+        }
+        if (str.charAt(0) == str.charAt(2)) {
+            return countPairs(str.substring(1)) + 1;
+        }
+        return countPairs(str.substring(1));
+    }
+
     public static void main(String[] args) {
 
     }
