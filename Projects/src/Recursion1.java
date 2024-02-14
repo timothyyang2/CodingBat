@@ -206,6 +206,75 @@ public class Recursion1 {
         return countPairs(str.substring(1));
     }
 
+    public int countAbc(String str) {
+        if (str.length() < 3) {
+            return 0;
+        }
+        if (str.substring(0, 3).equals("abc") || str.substring(0, 3).equals("aba")) {
+            return 1 + countAbc(str.substring(1));
+        }
+        return countAbc(str.substring(1));
+    }
+
+    public int count11(String str) {
+        if (str.length() < 2) {
+            return 0;
+        }
+        if (str.substring(0, 2).equals("11")) {
+            return 1 + count11(str.substring(2));
+        }
+        return count11(str.substring(1));
+    }
+
+    public String stringClean(String str) {
+        if (str.length() == 0) {
+            return "";
+        }
+        if (str.length() < 2) {
+            return str.substring(0, 1);
+        }
+        if (str.charAt(0) == str.charAt(1)) {
+            return stringClean(str.substring(1));
+        }
+        return str.substring(0, 1) + stringClean(str.substring(1));
+    }
+
+    public int countHi2(String str) {
+        if (str.length() < 2) {
+            return 0;
+        }
+        if (str.length() == 2 && str.equals("hi")) {
+            return 1;
+        }
+        if (str.length() > 2 && str.charAt(str.length() - 3) != 'x' && str.substring(str.length() - 2).equals("hi")) {
+            return 1 + countHi2(str.substring(0, str.length() - 1));
+        }
+        return countHi2(str.substring(0, str.length() - 1));
+    }
+
+    public String parenBit(String str) {
+        if (str.charAt(0) == '(' && str.charAt(str.length() - 1) == ')') {
+            return str;
+        }
+        if (str.charAt(0) == '(') {
+            return parenBit(str.substring(0, str.length() - 1));
+        }
+        if (str.charAt(str.length() - 1) == ')') {
+            return parenBit(str.substring(1));
+        }
+        return parenBit(str.substring(1, str.length() - 1));
+    }
+
+    public boolean nestParen(String str) {
+        if (str.length() == 0) {
+            return true;
+        }
+        if (!(str.charAt(0) == '(' && str.charAt(str.length() - 1) == ')')) {
+            return false;
+        }
+        return nestParen(str.substring(1, str.length() - 1));
+    }
+
     public static void main(String[] args) {
 
     }
