@@ -275,6 +275,42 @@ public class Recursion1 {
         return nestParen(str.substring(1, str.length() - 1));
     }
 
+    public int strCount(String str, String sub) {
+        if (str.length() < sub.length()) {
+            return 0;
+        }
+        if (str.substring(0, sub.length()).equals(sub)) {
+            return 1 + strCount(str.substring(sub.length()), sub);
+        }
+        return strCount(str.substring(1), sub);
+    }
+
+    public boolean strCopies(String str, String sub, int n) {
+        if (str.length() < sub.length() && n <= 0) {
+            return true;
+        }
+        if (str.length() < sub.length() && n > 0) {
+            return false;
+        }
+        if (str.substring(0, sub.length()).equals(sub)) {
+            return strCopies(str.substring(1), sub, n - 1);
+        }
+        return strCopies(str.substring(1), sub, n);
+    }
+
+    public int strDist(String str, String sub) {
+        if (str.length() < sub.length()) {
+            return 0;
+        }
+        if (str.substring(0, sub.length()).equals(sub) && str.substring(str.length() - sub.length()).equals(sub)) {
+            return str.length();
+        }
+        if (!str.substring(0, sub.length()).equals(sub)) {
+            return strDist(str.substring(1), sub);
+        }
+        return strDist(str.substring(0, str.length() - 1), sub);
+    }
+
     public static void main(String[] args) {
 
     }
