@@ -42,6 +42,22 @@ public class Array3 {
         return nums;
     }
 
+    public boolean canBalance(int[] nums) {
+        int first = 0;
+        int second = 0;
+        for (int i = 0; i < nums.length; i++) {
+            first += nums[i];
+        }
+        for (int j = 0; j < nums.length; j++) {
+            second += nums[j];
+            first -= nums[j];
+            if (first == second) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
 
     }
