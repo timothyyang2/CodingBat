@@ -29,6 +29,39 @@ public class AP1 {
         return count > 0;
     }
 
+    public int scoresAverage(int[] scores) {
+        int firstHalf = average(scores, 0, scores.length / 2);
+        int secondHalf = average(scores, scores.length / 2, scores.length);
+
+        return firstHalf > secondHalf ? firstHalf : secondHalf;
+    }
+
+    public int average(int[] scores, int start, int end) {
+        int result = 0;
+        for (int i = start; i < end; i++) {
+            result += scores[i];
+        }
+        return result / (end - start);
+    }
+
+    public int wordsCount(String[] words, int len) {
+        int count = 0;
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() == len) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public String[] wordsFront(String[] words, int n) {
+        String[] result = new String[n];
+        for (int i = 0; i < n; i++) {
+            result[i] = words[i];
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
 
     }
