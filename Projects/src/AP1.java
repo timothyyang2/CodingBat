@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class AP1 {
 
     public boolean scoresIncreasing(int[] scores) {
@@ -60,6 +63,36 @@ public class AP1 {
             result[i] = words[i];
         }
         return result;
+    }
+
+    public List wordsWithoutList(String[] words, int len) {
+        ArrayList<String> result = new ArrayList<String>();
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() != len) {
+                result.add(words[i]);
+            }
+        }
+        return result;
+    }
+
+    public boolean hasOne(int n) {
+        String input = String.valueOf(n);
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == '1') {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean dividesSelf(int n) {
+        String input = String.valueOf(n);
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == '0' || n % Integer.parseInt(input.substring(i, i + 1)) != 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {
