@@ -95,6 +95,40 @@ public class AP1 {
         return true;
     }
 
+    public int[] copyEvens(int[] nums, int count) {
+        int[] result = new int[count];
+        int index = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (index < count && nums[i] % 2 == 0) {
+                result[index] = nums[i];
+                index++;
+            }
+        }
+        return result;
+    }
+
+    public int[] copyEndy(int[] nums, int count) {
+        int[] result = new int[count];
+        int index = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (index < count && (nums[i] >= 0 && nums[i] <= 10 || nums[i] >= 90 && nums[i] <= 100)) {
+                result[index] = nums[i];
+                index++;
+            }
+        }
+        return result;
+    }
+
+    public int matchUp(String[] a, String[] b) {
+        int count = 0;
+        for (int i = 0; i < a.length; i++) {
+            if (!a[i].equals("") && !b[i].equals("") && a[i].charAt(0) == b[i].charAt(0)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
 
     }
