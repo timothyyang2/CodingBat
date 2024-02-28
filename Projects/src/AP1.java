@@ -129,6 +129,133 @@ public class AP1 {
         return count;
     }
 
+    public int scoreUp(String[] key, String[] answers) {
+        int score = 0;
+        for (int i = 0; i < key.length; i++) {
+            if (answers[i] == key[i]) {
+                score += 4;
+            } else if (answers[i].equals("?")) {
+                score += 0;
+            } else {
+                score -= 1;
+            }
+        }
+        return score;
+    }
+
+    public String[] wordsWithout(String[] words, String target) {
+        int count = 0;
+        for (int i = 0; i < words.length; i++) {
+            if (!words[i].equals(target)) {
+                count++;
+            }
+        }
+        String[] result = new String[count];
+        int index = 0;
+        for (int i = 0; i < words.length; i++) {
+            if (!words[i].equals(target)) {
+                result[index] = words[i];
+                index++;
+            }
+        }
+        return result;
+    }
+
+    public int scoresSpecial(int[] a, int[] b) {
+        return largestScore(a) + largestScore(b);
+    }
+
+    public int largestScore(int[] array) {
+        int max = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 10 == 0 && array[i] > max) {
+                max = array[i];
+            }
+        }
+        return max;
+    }
+
+    public int sumHeights(int[] heights, int start, int end) {
+        int sum = 0;
+        while (start < end) {
+            sum = sum + Math.abs(heights[start] - heights[start + 1]);
+            start++;
+        }
+        return sum;
+    }
+
+    public int sumHeights2(int[] heights, int start, int end) {
+        int sum = 0;
+        while (start < end) {
+            if (heights[start] - heights[start + 1] < 0) {
+                sum = sum + Math.abs(heights[start] - heights[start + 1]) * 2;
+            } else {
+                sum = sum + Math.abs(heights[start] - heights[start + 1]);
+            }
+            start++;
+        }
+        return sum;
+    }
+
+    public int bigHeights(int[] heights, int start, int end) {
+        int count = 0;
+        while (start < end) {
+            if (Math.abs(heights[start] - heights[start + 1]) >= 5) {
+                count++;
+            }
+            start++;
+        }
+        return count;
+    }
+
+    public int userCompare(String aName, int aId, String bName, int bId) {
+        if (aName.compareTo(bName) < 0) {
+            return -1;
+        } else if (aName.compareTo(bName) > 0) {
+            return 1;
+        } else if (aId < bId) {
+            return -1;
+        } else if (aId > bId) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public String[] mergeTwo(String[] a, String[] b, int n) {
+        String[] result = new String[n];
+        int index1 = 0;
+        int index2 = 0;
+        for (int i = 0; i < n; i++) {
+            if (a[index1].compareTo(b[index2]) < 0) {
+                result[i] = a[index1];
+                index1++;
+            } else if (a[index1].compareTo(b[index2]) > 0) {
+                result[i] = b[index2];
+                index2++;
+            } else {
+                result[i] = a[index1];
+                index1++;
+                index2++;
+            }
+        }
+        return result;
+    }
+
+    public int commonTwo(String[] a, String[] b) {
+        int count = 0;
+        String result = "";
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                if (a[j].compareTo(b[i]) == 0 && !result.contains(a[j])) {
+                    result += a[j];
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
 
     }
