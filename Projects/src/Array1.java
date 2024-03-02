@@ -211,9 +211,4 @@ public class Array1 {
 		}
 		return new int[] { a[0], b[0] };
 	}
-
-	public static void main(String[] args) {
-
-	}
-
 }

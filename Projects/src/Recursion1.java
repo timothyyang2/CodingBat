@@ -310,8 +310,4 @@ public class Recursion1 {
         }
         return strDist(str.substring(0, str.length() - 1), sub);
     }
-
-    public static void main(String[] args) {
-
-    }
 }

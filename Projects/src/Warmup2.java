@@ -170,8 +170,4 @@ public class Warmup2 {
     }
     return false;
   }
-
-  public static void main(String[] args) {
-
-  }
 }

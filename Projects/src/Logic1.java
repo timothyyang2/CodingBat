@@ -251,9 +251,4 @@ public class Logic1 {
     }
     return a + b;
   }
-
-  public static void main(String[] args) {
-
-  }
-
 }

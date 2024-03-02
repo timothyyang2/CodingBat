@@ -415,8 +415,4 @@ public class Array2 {
         }
         return result;
     }
-
-    public static void main(String[] args) {
-
-    }
 }

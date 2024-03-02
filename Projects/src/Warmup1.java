@@ -281,8 +281,4 @@ public class Warmup1 {
     }
     return result;
   }
-
-  public static void main(String[] args) {
-
-  }
 }

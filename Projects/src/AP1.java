@@ -255,8 +255,4 @@ public class AP1 {
         }
         return count;
     }
-
-    public static void main(String[] args) {
-
-    }
 }

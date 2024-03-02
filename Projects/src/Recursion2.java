@@ -67,8 +67,4 @@ public class Recursion2 {
         }
         return false;
     }
-
-    public static void main(String[] args) {
-
-    }
 }
