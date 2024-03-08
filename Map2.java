@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -77,6 +78,40 @@ public class Map2 {
                 result.put(strings[i], true);
             } else {
                 result.put(strings[i], false);
+            }
+        }
+        return result;
+    }
+
+    public String[] allSwap(String[] strings) {
+        Map<String, Integer> temp = new HashMap();
+        String[] result = new String[strings.length];
+        for (int i = 0; i < strings.length; i++) {
+            if (temp.containsKey(strings[i].substring(0, 1))) {
+                result[i] = strings[temp.get(strings[i].substring(0, 1))];
+                result[temp.get(strings[i].substring(0, 1))] = strings[i];
+                temp.remove(strings[i].substring(0, 1));
+            } else {
+                temp.put(strings[i].substring(0, 1), i);
+                result[i] = strings[i];
+            }
+        }
+        return result;
+    }
+
+    public String[] firstSwap(String[] strings) {
+        Map<String, Integer> temp = new HashMap();
+        ArrayList<String> swapped = new ArrayList<String>();
+        String[] result = new String[strings.length];
+        for (int i = 0; i < strings.length; i++) {
+            if (temp.containsKey(strings[i].substring(0, 1)) && !swapped.contains(strings[i].substring(0, 1))) {
+                result[i] = strings[temp.get(strings[i].substring(0, 1))];
+                result[temp.get(strings[i].substring(0, 1))] = strings[i];
+                swapped.add(strings[i].substring(0, 1));
+                temp.remove(strings[i].substring(0, 1));
+            } else {
+                temp.put(strings[i].substring(0, 1), i);
+                result[i] = strings[i];
             }
         }
         return result;
